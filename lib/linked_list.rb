@@ -1,24 +1,26 @@
 class LinkedList
-  attr_accessor :head
+  attr_accessor :head, :current
 
   def initialize()
     @head = nil
+    @current = nil
   end
 
-  def append(node)
+  def append!(node)
     if(@head)
       node.previous = tail
       tail.next = node
     else
       @head = node
+      @current = node
     end
     self
   end
 
-  def find(node_value)
+  def find(&block)
     node = @head
     loop do
-      if(node == nil || node_value == node.value)
+      if(node == nil || block.call(node.value))
         break
       else
         node = node.next 
@@ -27,8 +29,8 @@ class LinkedList
     node
   end
   
-  def delete(node_value)
-    node = find(node_value)
+  def delete!(&block)
+    node = find(&block)
     if(node.next)
       node.next.previous = node.previous
     end
@@ -42,21 +44,19 @@ class LinkedList
     self
   end
 
-  def insert_after(node_value, new_node)
-    previous_node      = find(node_value)
-    next_node          = previous_node.next
-    previous_node.next = new_node
-    next_node.previous = new_node if next_node
-    new_node.next      = next_node
-    new_node.previous  = previous_node
-    self
-  end
-
   def tail
     node = @head
     while(node.next != nil)
       node = node.next
     end
     node
+  end
+
+  def get_next!
+    @current = @current.next unless @current.next.nil?
+  end
+
+  def get_previous!
+    @current = @current.previous unless @current.previous.nil?
   end
 end

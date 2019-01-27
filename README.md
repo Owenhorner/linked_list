@@ -19,17 +19,15 @@ linked_list = LinkedList.new
 node = LinkedList::Node.new("string value")
 
 # Append a node to the linked_list object
-linked_list.append(node)
+linked_list.append!(node)
 
 # Find a node with a specific value in the linked list
-linked_list.find("string value")
-
-# insert a new node in a after a known item in the list
-second_node = LinkedList::Node.new("lorem")
-linked_list.insert_after(node.value, second_node)
+linked_list.find { |value| value == "string value" }
 
 # Delete a node from the linked list
-linked_list.delete(second_node.value)
+linked_list.delete! { |value| value == "string value" }
+
+# get
 
 ```
 
