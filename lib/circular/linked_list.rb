@@ -6,7 +6,7 @@ module Circular
       @current = nil
     end
 
-    def append(node)
+    def append!(node)
       if(@current)
         @current.previous.next = node
         node.previous = @current.previous
@@ -36,7 +36,7 @@ module Circular
       node
     end
 
-    def delete(&block)
+    def delete!(&block)
       node = find(&block)
 
       if(node != nil)
@@ -55,6 +55,14 @@ module Circular
         previous_node.next = next_node
       end
       self
+    end
+
+    def get_next!
+      @current = @current.next
+    end
+
+    def get_previous!
+      @current = @current.previous
     end
   end
 end
