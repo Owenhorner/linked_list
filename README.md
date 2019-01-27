@@ -1,38 +1,38 @@
 # LinkedList
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/linked_list`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+A ruby implmentation of linked_list
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'linked_list'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
-
-    $ gem install linked_list
+TODO: Add installation steps
 
 ## Usage
 
-TODO: Write usage instructions here
+```
+# Create a new linked list object
+linked_list = LinkedList.new
 
-## Development
+# Create a Node and give it a value
+node = Node.new("string value")
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
+# Append a node to the linked_list object
+linked_list.append(node)
 
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+# Find a node with a specific value in the linked list
+linked_list.find("string value")
+
+# insert a new node in a after a known item in the list
+second_node = Node.new("lorem")
+linked_list.insert_after(node.value, second_node)
+
+# Delete a node from the linked list
+linked_list.delete(second_node.value)
+
+```
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/linked_list.
+Bug reports and pull requests are welcome on GitHub at https://github.com/Owenhorner/linked_list.
 
 ## License
 
