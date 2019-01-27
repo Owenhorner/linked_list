@@ -1,4 +1,4 @@
-require 'linked_list/node'
+require 'node'
 RSpec.describe LinkedList do
   let!(:linked_list) { LinkedList.new }
   let(:node_1) { Node.new("String1") }
