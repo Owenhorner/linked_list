@@ -1,4 +1,4 @@
-class Node
+class LinkedList::Node
   attr_accessor :next, :previous
   attr_reader :value
 

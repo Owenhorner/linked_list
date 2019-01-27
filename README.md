@@ -9,11 +9,14 @@ TODO: Add installation steps
 ## Usage
 
 ```
+require 'linked_list'
+require 'linked_list/node'
+
 # Create a new linked list object
 linked_list = LinkedList.new
 
 # Create a Node and give it a value
-node = Node.new("string value")
+node = LinkedList::Node.new("string value")
 
 # Append a node to the linked_list object
 linked_list.append(node)
@@ -22,7 +25,7 @@ linked_list.append(node)
 linked_list.find("string value")
 
 # insert a new node in a after a known item in the list
-second_node = Node.new("lorem")
+second_node = LinkedList::Node.new("lorem")
 linked_list.insert_after(node.value, second_node)
 
 # Delete a node from the linked list

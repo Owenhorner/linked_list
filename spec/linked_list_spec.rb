@@ -1,9 +1,11 @@
-require 'node'
+require "linked_list"
+require "linked_list/node"
+
 RSpec.describe LinkedList do
   let!(:linked_list) { LinkedList.new }
-  let(:node_1) { Node.new("String1") }
-  let(:node_2) { Node.new("String2") }
-  let(:node_3) { Node.new("String3") }
+  let(:node_1) { LinkedList::Node.new("String1") }
+  let(:node_2) { LinkedList::Node.new("String2") }
+  let(:node_3) { LinkedList::Node.new("String3") }
 
   it "create new linked list" do
     expect(linked_list.head).to eq(nil)
@@ -67,7 +69,7 @@ RSpec.describe LinkedList do
   end
   
   describe "#insert_after" do
-    let(:new_node) { Node.new("new node string") }
+    let(:new_node) { LinkedList::Node.new("new node string") }
 
     before do
       linked_list.append(node_1)
