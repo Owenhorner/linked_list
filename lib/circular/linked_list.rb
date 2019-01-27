@@ -53,6 +53,8 @@ module Circular
 
         next_node.previous = previous_node
         previous_node.next = next_node
+
+        node = nil
       end
       self
     end
