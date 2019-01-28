@@ -27,8 +27,14 @@ linked_list.find { |value| value == "string value" }
 # Delete a node from the linked list
 linked_list.delete! { |value| value == "string value" }
 
-# get
+# Retrieve next element in list, this modifies state to store next item in state
+linked_list.get_next!
 
+# Retrieve previous element in list, this modifies state to store previous item in state
+linked_list.get_previous!
+
+# Retrieve current item stored in state
+linked_list.current
 ```
 
 ## Contributing
