@@ -29,7 +29,7 @@ module Circular
           node = nil
           break
         else
-          node = node.next 
+          node = node.next
         end
       end
       node
@@ -40,7 +40,7 @@ module Circular
 
       if(node != nil)
         if(node == @current)
-          if(@current == @current.next) 
+          if(@current == @current.next)
             @current = nil
             return
           else
