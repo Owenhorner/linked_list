@@ -66,4 +66,5 @@ module Circular
       @current = @current.previous
     end
   end
+
 end
