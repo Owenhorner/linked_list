@@ -7,4 +7,5 @@ class LinkedList::Node
     @next = nil
     @previous = nil
   end
+
 end

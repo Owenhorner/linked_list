@@ -10,7 +10,6 @@ module Circular
       if(@current)
         @current.previous.next = node
         node.previous = @current.previous
-        
         @current.previous = node
         node.next = @current
       else
